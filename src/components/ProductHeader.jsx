@@ -11,12 +11,12 @@ class ProductHeader extends Component {
         let nameIcon = '';
         let priceIcon = '';
         if (this.props.sortingProp === 'name') {
-            if(this.props.sortingType === 'asc') nameIcon = <SortAlphaUp className='sort-icon' />;
-            else if(this.props.sortingType === 'desc') nameIcon = <SortAlphaDown className='sort-icon' />;
+            if(this.props.sortingType === 'asc') nameIcon = <SortAlphaDown className='sort-icon' />;
+            else if(this.props.sortingType === 'desc') nameIcon = <SortAlphaUp className='sort-icon' />;
         }
         else if (this.props.sortingProp === 'price') {
-            if(this.props.sortingType === 'asc') priceIcon = <SortNumericUp className='sort-icon' />;
-            else if(this.props.sortingType === 'desc') priceIcon = <SortNumericDown className='sort-icon' />;
+            if(this.props.sortingType === 'asc') priceIcon = <SortNumericDown className='sort-icon' />;
+            else if(this.props.sortingType === 'desc') priceIcon = <SortNumericUp className='sort-icon' />;
         }
         
         return (

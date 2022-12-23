@@ -5,7 +5,7 @@ import SearchApp from './SearchApp.jsx';
 import AddingApp from './AddingApp.jsx';
 import EditingApp from './EditingApp.jsx';
 import ProductTable from './ProductTable.jsx';
-import { ArrowRepeat, PlusCircleFill } from 'react-bootstrap-icons';
+import { ArrowRepeat, PlusCircleFill, DatabaseFill } from 'react-bootstrap-icons';
 
 class FilterableProductTable extends Component {
     constructor(props) {
@@ -14,15 +14,15 @@ class FilterableProductTable extends Component {
             data: Array.from(props.data),
             addingModalActive: false,
             addingName: '',
-            addingPrice: 0,
+            addingPrice: '',
             addingCategory: '',
             addingStocked: false,
             editingModalActive: false,
             editingID: null,
             editingName: '',
-            editingPrice: 0,
+            editingPrice: '',
             editingCategory: '',
-            editingStocked: false,
+            editingStocked: null,
             searchText: '',
             isStockedOnly: false
         };
@@ -54,7 +54,7 @@ class FilterableProductTable extends Component {
             data: newData,
             addingModalActive: false,
             addingName: '',
-            addingPrice: 0,
+            addingPrice: '',
             addingCategory: '',
             addingStocked: false
         });
@@ -76,9 +76,9 @@ class FilterableProductTable extends Component {
             editingID: null,
             editingModalActive: false,
             editingName: '',
-            editingPrice: 0,
+            editingPrice: '',
             editingCategory: '',
-            editingStocked: false
+            editingStocked: null
         });
     }
 
@@ -142,6 +142,7 @@ class FilterableProductTable extends Component {
         return (
             <div className='main-app'>
                 <div>
+                    <h1>Product Table<DatabaseFill /></h1>
                     <button onClick={this.handleAddButton}>
                         Add product
                         <PlusCircleFill />
