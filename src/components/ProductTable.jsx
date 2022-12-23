@@ -44,7 +44,7 @@ class ProductTable extends Component {
                 categories = [...categories, product.category];
                 rows = [...rows, <ProductCategoryRow category={product.category} key={product.category} />];
             }
-            rows = [...rows, <ProductRow key={product.name} product={product} />];
+            rows = [...rows, <ProductRow key={product.id} product={product} onEditRow={this.props.onEditRow} onDeleteRow={this.props.onDeleteRow} />];
         });
 
         return (
